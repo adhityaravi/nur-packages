@@ -15,4 +15,6 @@
   overlays = import ./overlays; # nixpkgs overlays
 
   obsidian-tasks = pkgs.callPackage ./pkgs/obsidian-tasks { };
+  obsidian-everforest-enchanted =
+    pkgs.callPackage ./pkgs/obsidian-everforest-enchanted { };
 }
