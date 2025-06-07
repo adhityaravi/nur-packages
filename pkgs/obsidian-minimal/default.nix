@@ -15,7 +15,9 @@ stdenv.mkDerivation rec {
 
   installPhase = ''
     mkdir -p $out
-    cp -r $src/* $out/
+    cp $src/theme.css $out/
+    cp $src/manifest.json $out/
+    ln -s $out/theme.css $out/obsidian.css
   '';
 
   meta = with lib; {
