@@ -17,4 +17,5 @@
   obsidian-tasks = pkgs.callPackage ./pkgs/obsidian-tasks { };
   obsidian-everforest-enchanted =
     pkgs.callPackage ./pkgs/obsidian-everforest-enchanted { };
+  obsidian-minimal = pkgs.callPackage ./pkgs/obsidian-minimal { };
 }
