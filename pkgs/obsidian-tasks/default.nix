@@ -1,20 +1,24 @@
-{ lib, stdenv, fetchzip }:
+{ lib, stdenv, fetchurl, unzip }:
 
 stdenv.mkDerivation rec {
   pname = "obsidian-tasks";
   version = "7.19.1";
 
-  src = fetchzip {
+  src = fetchurl {
     url = "https://github.com/obsidian-tasks-group/obsidian-tasks/releases/download/${version}/obsidian-tasks-${version}.zip";
-    sha256 = "04kkwwgphm8ggabbir9ksn1qqz1qm4jvlcq9q5p06d364j3bnnbf";
-    stripRoot = false;
+    sha256 = "sha256-6lJ3YxYwU6qYyUQH21kqKeAXRll2OmmkhH8t3dPJG8c=";
   };
 
-  phases = [ "installPhase" ];
+  nativeBuildInputs = [ unzip ];
+  dontUnpack = true;
 
+  phases = [ "installPhase" ];
   installPhase = ''
-    mkdir -p $out
-    cp -r ./* $out/
+    mkdir -p $out/tmp
+    unzip -d $out/tmp $src
+    topdir=$(ls -1 $out/tmp)
+    cp -r $out/tmp/$topdir/* $out/
+    rm -rf $out/tmp
   '';
 
   meta = with lib; {
