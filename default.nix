@@ -18,4 +18,6 @@
   obsidian-everforest-enchanted =
     pkgs.callPackage ./pkgs/obsidian-everforest-enchanted { };
   obsidian-minimal = pkgs.callPackage ./pkgs/obsidian-minimal { };
+  obsidian-minimal-settings =
+    pkgs.callPackage ./pkgs/obsidian-minimal-settings { };
 }
