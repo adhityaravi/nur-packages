@@ -9,6 +9,7 @@ vimUtils.buildVimPlugin {
     repo = "kulala.nvim";
     rev = "v5.3.0";
     sha256 = "1qf48ldpkwvsi9q73wkkvvlbdswl69ysapch46bk1ifdpp82nspr";
+    doCheck = false;  # ci fails due require check because of plugin not being in std lua path
   };
 
   postInstall = ''
