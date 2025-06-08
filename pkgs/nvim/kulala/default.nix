@@ -11,7 +11,7 @@ vimUtils.buildVimPlugin {
     sha256 = "1qf48ldpkwvsi9q73wkkvvlbdswl69ysapch46bk1ifdpp82nspr";
   };
 
-  doCheck = False;  # require test fails in cli for some reason
+  doCheck = false;  # require test fails in cli for some reason
 
   postInstall = ''
     rm -rf $out/{.github,assets,tests,fmt,scripts,docs}
