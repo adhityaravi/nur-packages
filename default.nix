@@ -14,10 +14,14 @@
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
 
-  obsidian-tasks = pkgs.callPackage ./pkgs/obsidian-tasks { };
+  # Obsidian plugins
+  obsidian-tasks = pkgs.callPackage ./pkgs/obsidian/tasks { };
   obsidian-everforest-enchanted =
-    pkgs.callPackage ./pkgs/obsidian-everforest-enchanted { };
-  obsidian-minimal = pkgs.callPackage ./pkgs/obsidian-minimal { };
+    pkgs.callPackage ./pkgs/obsidian/everforest-enchanted { };
+  obsidian-minimal = pkgs.callPackage ./pkgs/obsidian/minimal { };
   obsidian-minimal-settings =
-    pkgs.callPackage ./pkgs/obsidian-minimal-settings { };
+    pkgs.callPackage ./pkgs/obsidian/minimal-settings { };
+
+  # Neovim plugins
+  kulala-nvim = pkgs.callPackage ./pkgs/nvim/kulala { };
 }
