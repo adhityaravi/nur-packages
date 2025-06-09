@@ -17,7 +17,7 @@ vimUtils.buildVimPlugin {
   doCheck = false; # tests require neovim runtime
 
   postInstall = ''
-    rm -rf $out/{tests,template}
+    rm -rf $out/{tests}
     rm -f $out/{.gitignore,.luarc.json,run_tests.sh,README.md,LICENSE}
   '';
 
