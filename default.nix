@@ -5,23 +5,21 @@
 # Having pkgs default to <nixpkgs> is fine though, and it lets you use short
 # commands such as:
 #     nix-build -A mypackage
-
-{ pkgs ? import <nixpkgs> { } }:
-
-{
+{pkgs ? import <nixpkgs> {}}: {
   # The `lib`, `modules`, and `overlays` names are special
-  lib = import ./lib { inherit pkgs; }; # functions
+  lib = import ./lib {inherit pkgs;}; # functions
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
 
   # Obsidian plugins
-  obsidian-tasks = pkgs.callPackage ./pkgs/obsidian/tasks { };
+  obsidian-tasks = pkgs.callPackage ./pkgs/obsidian/tasks {};
   obsidian-everforest-enchanted =
-    pkgs.callPackage ./pkgs/obsidian/everforest-enchanted { };
-  obsidian-minimal = pkgs.callPackage ./pkgs/obsidian/minimal { };
+    pkgs.callPackage ./pkgs/obsidian/everforest-enchanted {};
+  obsidian-minimal = pkgs.callPackage ./pkgs/obsidian/minimal {};
   obsidian-minimal-settings =
-    pkgs.callPackage ./pkgs/obsidian/minimal-settings { };
+    pkgs.callPackage ./pkgs/obsidian/minimal-settings {};
+  obsidian-dataview = pkgs.callPackage ./pkgs/obsidian/dataview {};
 
   # Neovim plugins
-  kulala-nvim = pkgs.callPackage ./pkgs/nvim/kulala { };
+  kulala-nvim = pkgs.callPackage ./pkgs/nvim/kulala {};
 }
