@@ -1,5 +1,8 @@
-{ lib, vimUtils, fetchFromGitHub }:
-
+{
+  lib,
+  vimUtils,
+  fetchFromGitHub,
+}:
 vimUtils.buildVimPlugin {
   pname = "goose-nvim";
   version = "1.0.1";
@@ -8,7 +11,7 @@ vimUtils.buildVimPlugin {
     owner = "azorng";
     repo = "goose.nvim";
     rev = "v1.0.1";
-    sha256 = "155qgmpm7b86gydfl724jkb7zqmf3xpic75swaq0ir14k7ni1zpc";
+    sha256 = "sha256-jVWggPmdINFNVHJSCpbTZq8wKwGjldu6PNSkb7naiQE=";
   };
 
   doCheck = false; # tests require neovim runtime
