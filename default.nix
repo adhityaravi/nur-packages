@@ -19,6 +19,8 @@
   obsidian-minimal-settings =
     pkgs.callPackage ./pkgs/obsidian/minimal-settings {};
   obsidian-dataview = pkgs.callPackage ./pkgs/obsidian/dataview {};
+  obsidian-git = pkgs.callPackage ./pkgs/obsidian/git {};
+  obsidian-drawio = pkgs.callPackage ./pkgs/obsidian/drawio {};
 
   # Neovim plugins
   kulala-nvim = pkgs.callPackage ./pkgs/nvim/kulala {};
